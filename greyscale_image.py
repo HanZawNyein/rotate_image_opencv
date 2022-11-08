@@ -1,10 +1,16 @@
 import cv2
 
-image = cv2.imread("images\download.jpg")
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+path = r"images\download.jpg"
 
-# cv2.imshow('Original image', image)
-cv2.imshow('Gray image', gray)
+# Reading an image in default mode
+src = cv2.imread(path)
 
+# Convert to Grayscale
+img_gray = cv2.cvtColor(src,cv2.COLOR_BGR2GRAY)
+
+# To display Image
+window_name='Grayscale Conversion OpenCV'
+cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+cv2.imshow(window_name,img_gray)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
